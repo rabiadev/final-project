@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script src="../appoint/jquery.validate.min.js"></script>
+    <style>
+      label.error {
+        color: red;
+        font-size: 1rem;
+        display: block;
+        margin-top: 5px;
+      }
+
+      input.error {
+        border: 1px solid red;
+        font-weight: 300;
+        color: red;
+      }
+
+      .c2 {
+        color: red;
+        border: 1px solid red;
+      }
+
+      .c3 {
+        color: green;
+        border: 1px solid green;
+      }
+    </style>
+    
+  </head>
+
+  <body>
+    <form id="myform">
+      <div>
+        <img
+          src="../appoint/img/images.jpg"
+          alt=""
+          width="100"
+          height="100"
+        />
+      </div>
+
+      <h2>User Login</h2>
+      <div class="user-input">
+        <label for="username">Username (atleast 3)</label>
+
+        <input
+          type="username"
+          id="username"
+          name="field1"
+          placeholder="Username"
+        />
+      </div>
+      <div class="user-input">
+        <label for="password">Password (minimum 5)</label>
+
+        <input
+          type="password"
+          id="password"
+          name="field2"
+          placeholder="password"
+        />
+      </div>
+
+      <div class="check">
+        <label for="password"></label>
+        <input type="checkbox" />
+        <p>Remember Me</p>
+        <p><a href="../appoint/sign.html">Forget Password</a></p>
+      </div>
+
+      <button class="log-btn"><a href="../appoint/index.html">Login</a></button>
+    </form>
+    <script>
+      $(document).ready(function () {
+        $('#myform').validate({
+          rules: {
+            field1: {
+              required: true,
+
+              minlength: 3,
+            },
+            field2: {
+              required: true,
+              minlength: 5,
+            },
+          },
+        })
+      })
+    </script>
+  </body>
+  
+</html>

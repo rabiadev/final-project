@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="../appoint/jquery.validate.min.js"></script>
+
+    <style>
+        label.error {
+            color: red;
+            font-size: 1rem;
+            display: block;
+            margin-top: 5px;
+        }
+
+        input.error {
+            border: 1px solid red;
+            font-weight: 300;
+            color: red;
+        }
+    </style>
+
+</head>
+
+<body>
+    <form id="sign-form">
+        <div class="s-img">
+            <img src="../appoint/img/signup.png" height="90" alt="" />
+            <h1>
+                Sign Up
+            </h1>
+        </div>
+
+        <div class="user-input">
+            <label for="">First Name: (atleast 4)</label>
+            <input type="text" name="fname" id="" placeholder="Enter First Name" />
+        </div>
+        <div class="user-input">
+            <label for="">Last Name:(atleast 4)</label>
+
+            <input type="text" name="Lname" id="" placeholder="Enter  Last Name" />
+        </div>
+
+        <div class="user-input">
+            <label for="" id="Password">Password: (strong atl 8)<label>
+                    <input type="Password" name="Password" placeholder="Password" id="" />
+        </div>
+        <div class="user-input">
+            <label for="email" id="Email">Email: (with @)</label>
+            <input type="Email" name="Email" placeholder="Enter Mail" />
+        </div>
+        <div class="user-input">
+            <label for="" id="number">Mobile no: (req 11 num)</label>
+
+            <input type="number" name="number" placeholder="Number" />
+        </div>
+
+        <div class="user-input">
+            <button class="signbtn">Sign up</button>
+            <a href="../appoint/index.html">back to home</a>
+        </div>
+    </form>
+
+    <script>
+
+        $(document).ready(function () {
+
+            $('#sign-form').validate({
+                rules: {
+                    fname: {
+                        required: true,
+                        minlength: 4
+                    },
+                    Lname: {
+                        required: true,
+                        minlength: 4
+                    },
+                    Password: {
+                        required: true,
+                        minlength: 8
+                    },
+                    Email: {
+                        required: true,
+                        email: true,
+                        minlength: 10
+                    },
+                    number: {
+                        required: true,
+                        minlength: 11
+                    }
+                }
+            });
+
+        });
+
+    </script>
+</body>
+
+</html>
